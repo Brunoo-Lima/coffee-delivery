@@ -1,15 +1,9 @@
 import Plus from '../assets/plus.svg';
 import Minus from '../assets/minus.svg';
 import Cart from '../assets/cart.svg';
+import { ProductType } from './Product';
 
-type ListProductsProps = {
-  imgUrl: string;
-  altImg: string;
-  type: string[];
-  name: string;
-  description: string;
-  price: number;
-};
+type ListProductsProps = Omit<ProductType, 'id'>;
 
 const ListProduct = ({
   type,
