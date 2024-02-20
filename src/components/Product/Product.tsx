@@ -18,7 +18,7 @@ const Product = () => {
         Nossos cafés
       </h1>
 
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-x-3 gap-y-12">
         {coffees.map((coffee) => (
           <div key={coffee.id}>
             <ListProduct
