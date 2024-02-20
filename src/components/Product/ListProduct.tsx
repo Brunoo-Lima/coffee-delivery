@@ -19,7 +19,7 @@ const ListProduct = ({
         <img src={imgUrl} alt={altImg} width={120} height={120} className="" />
       </div>
 
-      <div className="flex flex-col space-y-4 absolute bottom-5 left-0 right-0 px-5">
+      <div className="flex flex-col space-y-4 absolute bottom-5 left-0 right-0 px-4">
         <div className="flex fle-row gap-2 justify-center items-center">
           {type.map((type) => (
             <span className="mt-2 uppercase text-yellow_dark font-bold text-[0.625rem] bg-yellow_light text-center p-2 py-1 rounded-full">
@@ -34,7 +34,7 @@ const ListProduct = ({
           {description}
         </p>
 
-        <div className="flex justify-around items-center">
+        <div className="flex justify-between items-center px-2">
           <p className="text-texts font-second font-bold text-xl">
             <span className="text-sm font-normal mr-1">R$</span>
             {price.toLocaleString('pt-BR', {
