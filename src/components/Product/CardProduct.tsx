@@ -3,18 +3,18 @@ import Minus from '../assets/minus.svg';
 import Cart from '../assets/cart.svg';
 import { ProductType } from './Product';
 
-type ListProductsProps = Omit<ProductType, 'id'>;
+type CardProductProps = Omit<ProductType, 'id'>;
 
-const ListProduct = ({
+const CardProduct = ({
   type,
   imgUrl,
   altImg,
   name,
   description,
   price,
-}: ListProductsProps) => {
+}: CardProductProps) => {
   return (
-    <div className="bg-card w-[256px] h-[310px] relative flex p-4 rounded-se-[2.5rem] rounded-es-[2.5rem] rounded-tl-md rounded-br-md">
+    <div className="bg-base_card w-[256px] h-[310px] relative flex p-4 rounded-se-[2.5rem] rounded-es-[2.5rem] rounded-tl-md rounded-br-md">
       <div className="absolute left-[25%] right-[25%] -top-5">
         <img src={imgUrl} alt={altImg} width={120} height={120} className="" />
       </div>
@@ -28,14 +28,16 @@ const ListProduct = ({
           ))}
         </div>
 
-        <p className="text-subtitle font-bold text-xl text-center">{name}</p>
+        <p className="font-primary font-bold text-xl text-center text-base_subtitle">
+          {name}
+        </p>
 
-        <p className="text-describe font-second font-normal text-sm text-center">
+        <p className="text-base_label font-second font-normal text-sm text-center">
           {description}
         </p>
 
         <div className="flex justify-between items-center px-2">
-          <p className="text-texts font-second font-bold text-xl">
+          <p className="text-base_text font-second font-bold text-xl">
             <span className="text-sm font-normal mr-1">R$</span>
             {price.toLocaleString('pt-BR', {
               minimumFractionDigits: 2,
@@ -44,7 +46,7 @@ const ListProduct = ({
           </p>
 
           <div className="flex gap-x-2">
-            <div className="flex items-center gap-2 bg-btn_quantity px-2 rounded-md">
+            <div className="flex items-center gap-2 bg-base_button px-2 rounded-md">
               <img src={Minus} alt="Icone de diminuir quantidade" />
               <span>1</span>
               <img src={Plus} alt="Icone de aumentar quantidade" />
@@ -60,4 +62,4 @@ const ListProduct = ({
   );
 };
 
-export default ListProduct;
+export default CardProduct;
