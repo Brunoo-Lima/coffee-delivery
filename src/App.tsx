@@ -1,10 +1,10 @@
-import Product from './components/Product/Product';
+import Products from './components/Product/Products';
 
 const App = () => {
   return (
     <div className="font-primary">
       <main className="container mx-auto px-8">
-        <Product />
+        <Products />
       </main>
     </div>
   );

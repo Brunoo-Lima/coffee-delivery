@@ -1,55 +1,76 @@
 import Plus from '../assets/plus.svg';
 import Minus from '../assets/minus.svg';
 import Cart from '../assets/cart.svg';
-import { ProductType } from './Product';
+import { useDispatch } from 'react-redux';
+import {
+  decreaseProductQuantity,
+  increaseProductQuantity,
+} from '../../redux/card/actions';
 
-type CardProductProps = Omit<ProductType, 'id'>;
+interface CardProductProps {
+  coffee: {
+    id: number;
+    image: string;
+    altImg: string;
+    tags: string[];
+    title: string;
+    description: string;
+    price: number;
+  };
+}
 
-const CardProduct = ({
-  type,
-  imgUrl,
-  altImg,
-  name,
-  description,
-  price,
-}: CardProductProps) => {
+const CardProduct = ({ coffee }: CardProductProps) => {
+  const dispatch = useDispatch();
+
+  const handleIncreaseProductQuantity = () => {
+    dispatch(increaseProductQuantity(coffee.id));
+  };
+
+  const handleDecreaseProductQuantity = () => {
+    dispatch(decreaseProductQuantity(coffee.id));
+  };
+
   return (
     <div className="bg-base_card w-[256px] h-[310px] relative flex p-4 rounded-se-[2.5rem] rounded-es-[2.5rem] rounded-tl-md rounded-br-md">
       <div className="absolute left-[25%] right-[25%] -top-5">
-        <img src={imgUrl} alt={altImg} width={120} height={120} className="" />
+        <img src={coffee.image} alt={coffee.altImg} width={120} height={120} />
       </div>
 
       <div className="flex flex-col space-y-4 absolute bottom-5 left-0 right-0 px-4">
         <div className="flex fle-row gap-2 justify-center items-center">
-          {type.map((type) => (
+          {coffee.tags.map((tags) => (
             <span className="mt-2 uppercase text-yellow_dark font-bold text-[0.625rem] bg-yellow_light text-center p-2 py-1 rounded-full">
-              {type}
+              {tags}
             </span>
           ))}
         </div>
 
         <p className="font-primary font-bold text-xl text-center text-base_subtitle">
-          {name}
+          {coffee.title}
         </p>
 
         <p className="text-base_label font-second font-normal text-sm text-center">
-          {description}
+          {coffee.description}
         </p>
 
         <div className="flex justify-between items-center px-2">
           <p className="text-base_text font-second font-bold text-xl">
             <span className="text-sm font-normal mr-1">R$</span>
-            {price.toLocaleString('pt-BR', {
+            {coffee.price.toLocaleString('pt-BR', {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
           </p>
 
           <div className="flex gap-x-2">
-            <div className="flex items-center gap-2 bg-base_button px-2 rounded-md">
-              <img src={Minus} alt="Icone de diminuir quantidade" />
-              <span>1</span>
-              <img src={Plus} alt="Icone de aumentar quantidade" />
+            <div className="flex justify-between items-center gap-2 bg-base_button w-[4.8rem] px-2 rounded-md">
+              <button onClick={handleDecreaseProductQuantity}>
+                <img src={Minus} alt="Icone de diminuir quantidade" />
+              </button>
+              <p className="text-base">1</p>
+              <button onClick={handleIncreaseProductQuantity}>
+                <img src={Plus} alt="Icone de aumentar quantidade" />
+              </button>
             </div>
 
             <button className="bg-purple_dark p-2 rounded-md">
