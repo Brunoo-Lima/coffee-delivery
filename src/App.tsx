@@ -1,9 +1,11 @@
+import SectionHero from './components/SectionHero';
 import Products from './components/Product/Products';
 
 const App = () => {
   return (
     <div className="font-primary">
-      <main className="container mx-auto px-8">
+      <main>
+        <SectionHero />
         <Products />
       </main>
     </div>
