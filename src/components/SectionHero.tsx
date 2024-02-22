@@ -6,7 +6,7 @@ import { ShoppingCart, Package, Timer, Coffee } from '@phosphor-icons/react';
 
 const SectionHero = () => {
   return (
-    <section className="py-10">
+    <section className="pb-10">
       <div
         style={{
           background: `url(${Hero_bg})`,

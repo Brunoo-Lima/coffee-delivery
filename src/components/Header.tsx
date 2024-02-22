@@ -4,7 +4,7 @@ import Container from './utilities/Container';
 
 const Header = () => {
   return (
-    <header className="p-8 bg-base_background">
+    <header className="p-8">
       <Container>
         <div className="flex justify-between items-center">
           <div>
