@@ -1,6 +1,7 @@
-import Plus from '../assets/plus.svg';
-import Minus from '../assets/minus.svg';
 import Cart from '../assets/cart.svg';
+
+import { Minus, Plus } from '@phosphor-icons/react';
+
 import { useDispatch } from 'react-redux';
 import {
   decreaseProductQuantity,
@@ -65,15 +66,21 @@ const CardProduct = ({ coffee }: CardProductProps) => {
           <div className="flex gap-x-2">
             <div className="flex justify-between items-center gap-2 bg-base_button w-[4.8rem] px-2 rounded-md">
               <button onClick={handleDecreaseProductQuantity}>
-                <img src={Minus} alt="Icone de diminuir quantidade" />
+                <Minus
+                  size={13}
+                  className="text-purple hover:text-purple_dark transition duration-300"
+                />
               </button>
               <p className="text-base">1</p>
               <button onClick={handleIncreaseProductQuantity}>
-                <img src={Plus} alt="Icone de aumentar quantidade" />
+                <Plus
+                  size={13}
+                  className="text-purple hover:text-purple_dark transition duration-300"
+                />
               </button>
             </div>
 
-            <button className="bg-purple_dark p-2 rounded-md">
+            <button className="bg-purple_dark p-2 rounded-md hover:bg-purple transition duration-300">
               <img src={Cart} alt="Icone de carrinho de compras" />
             </button>
           </div>

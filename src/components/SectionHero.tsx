@@ -2,26 +2,26 @@ import Hero from '../../public/images/hero.svg';
 import Hero_bg from '../../public/images/hero-bg.svg';
 import Container from './utilities/Container';
 
-import {
-  Trash,
-  ShoppingCart,
-  Package,
-  Timer,
-  Coffee,
-} from '@phosphor-icons/react';
+import { ShoppingCart, Package, Timer, Coffee } from '@phosphor-icons/react';
 
 const SectionHero = () => {
   return (
-    <section className="h-[544px] py-10">
-      <div style={{ background: `url(${Hero_bg})` }}>
+    <section className="py-10">
+      <div
+        style={{
+          background: `url(${Hero_bg})`,
+          backgroundSize: 'cover',
+        }}
+        className="py-10"
+      >
         <Container>
-          <div className="grid grid-cols-2 gap-36">
-            <div className="flex flex-col">
+          <div className="flex justify-between">
+            <div className="flex flex-col w-[588px]">
               <h1 className="text-base_title font-extrabold text-5xl font-primary w-[650px] leading-tight mb-6">
                 Encontre o café perfeito para qualquer hora do dia
               </h1>
 
-              <p className="text-base_subtitle text-xl font-normal font-second mb-12">
+              <p className="text-base_subtitle text-xl font-normal font-second mb-16">
                 Com o Coffee Delivery você recebe seu café onde estiver, a
                 qualquer hora
               </p>
@@ -61,6 +61,7 @@ const SectionHero = () => {
                 </li>
               </ul>
             </div>
+
             <div>
               <img src={Hero} alt="Icone de bebida" width={476} height={360} />
             </div>
