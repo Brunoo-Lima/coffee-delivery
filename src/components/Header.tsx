@@ -25,7 +25,7 @@ const Header = () => {
                 weight="fill"
                 className="text-purple_dark transition duration-300 group-hover:text-purple"
               />
-              <p className="text-purple_dark group-hover:text-purple transition duration-300 font-roboto">
+              <p className="text-purple_dark group-hover:text-purple transition duration-300 font-roboto text-sm">
                 São Paulo, SP
               </p>
             </li>

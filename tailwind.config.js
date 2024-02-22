@@ -25,6 +25,10 @@ export default {
         base_card: '#F3F2F2',
         base_background: '#FAFAFA',
       },
+      gridTemplateColumns: {
+        cart: '1fr 500px',
+        forms: '200px 1fr 60px',
+      },
     },
   },
   plugins: [],
