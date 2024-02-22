@@ -17,11 +17,11 @@ const SectionHero = () => {
         <Container>
           <div className="flex justify-between">
             <div className="flex flex-col w-[588px]">
-              <h1 className="text-base_title font-extrabold text-5xl font-primary w-[650px] leading-tight mb-6">
+              <h1 className="text-base_title font-extrabold text-5xl font-baloo2 w-[650px] leading-tight mb-6">
                 Encontre o café perfeito para qualquer hora do dia
               </h1>
 
-              <p className="text-base_subtitle text-xl font-normal font-second mb-16">
+              <p className="text-base_subtitle text-xl font-normal font-roboto mb-16">
                 Com o Coffee Delivery você recebe seu café onde estiver, a
                 qualquer hora
               </p>
@@ -31,7 +31,7 @@ const SectionHero = () => {
                   <div className="bg-yellow_dark rounded-full w-8 h-8 flex items-center justify-center">
                     <ShoppingCart color="#ffffff" size={20} weight="fill" />
                   </div>
-                  <p className="font-second text-base">
+                  <p className="font-roboto text-base">
                     Compra simples e segura
                   </p>
                 </li>
@@ -39,7 +39,7 @@ const SectionHero = () => {
                   <div className="bg-base_text rounded-full w-8 h-8 flex items-center justify-center">
                     <Package color="#ffffff" size={20} weight="fill" />
                   </div>
-                  <p className="font-second text-base">
+                  <p className="font-roboto text-base">
                     Embalagem mantém o café intacto
                   </p>
                 </li>
@@ -47,7 +47,7 @@ const SectionHero = () => {
                   <div className="bg-yellow rounded-full w-8 h-8 flex items-center justify-center">
                     <Timer color="#ffffff" size={20} weight="fill" />
                   </div>
-                  <p className="font-second text-base">
+                  <p className="font-roboto text-base">
                     Entrega rápida e rastreada
                   </p>
                 </li>
@@ -55,7 +55,7 @@ const SectionHero = () => {
                   <div className="bg-purple rounded-full w-8 h-8 flex items-center justify-center">
                     <Coffee color="#ffffff" size={20} weight="fill" />
                   </div>
-                  <p className="font-second text-base">
+                  <p className="font-roboto text-base">
                     O café chega fresquinho até você
                   </p>
                 </li>

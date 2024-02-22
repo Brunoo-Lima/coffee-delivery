@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <div className="font-primary bg-base_background">
+    <div className="font-font-baloo2 bg-base_background">
       <Header />
       <main>
         <SectionHero />

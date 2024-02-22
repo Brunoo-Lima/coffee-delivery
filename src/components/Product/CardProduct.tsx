@@ -36,7 +36,7 @@ const CardProduct = ({ coffee }: CardProductProps) => {
       </div>
 
       <div className="flex flex-col space-y-4 absolute bottom-5 left-0 right-0 px-4">
-        <div className="flex fle-row gap-2 justify-center items-center">
+        <div className="flex flex-row gap-2 justify-center items-center">
           {coffee.tags.map((tags) => (
             <span className="mt-2 uppercase text-yellow_dark font-bold text-[0.625rem] bg-yellow_light text-center p-2 py-1 rounded-full">
               {tags}
@@ -44,16 +44,16 @@ const CardProduct = ({ coffee }: CardProductProps) => {
           ))}
         </div>
 
-        <p className="font-primary font-bold text-xl text-center text-base_subtitle">
+        <p className="font-baloo2 font-bold text-xl text-center text-base_subtitle">
           {coffee.title}
         </p>
 
-        <p className="text-base_label font-second font-normal text-sm text-center">
+        <p className="text-base_label font-roboto font-normal text-sm text-center">
           {coffee.description}
         </p>
 
         <div className="flex justify-between items-center px-2">
-          <p className="text-base_text font-second font-bold text-xl">
+          <p className="text-base_text font-baloo2 font-bold text-xl">
             <span className="text-sm font-normal mr-1">R$</span>
             {coffee.price.toLocaleString('pt-BR', {
               minimumFractionDigits: 2,

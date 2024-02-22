@@ -6,7 +6,7 @@ const Products = () => {
   return (
     <section className="py-10">
       <Container>
-        <h1 className="text-3xl font-extrabold leading-relaxed mb-10 text-base_subtitle font-primary">
+        <h1 className="text-3xl font-extrabold leading-relaxed mb-10 text-base_subtitle font-baloo2">
           Nossos cafés
         </h1>
         <div className="grid sm:grid-cols-4 grid-cols-1 gap-y-12 justify-items-center">

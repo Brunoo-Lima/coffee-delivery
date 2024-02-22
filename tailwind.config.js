@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Baloo 2', 'sans-serif'],
-        second: ['Roboto', 'sans-serif'],
+        baloo2: ['"Baloo 2"', 'sans-serif'],
+        roboto: ['"Roboto"', 'sans-serif'],
       },
       colors: {
         yellow_dark: '#C47F17',

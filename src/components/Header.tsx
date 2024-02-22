@@ -8,7 +8,7 @@ const Header = () => {
       <Container>
         <div className="flex justify-between items-center">
           <div>
-            <img src={Logo} alt="Logo da loja" />
+            <img src={Logo} alt="Logo da loja" width={84.95} height={40} />
           </div>
 
           <ul className="flex gap-4 items-center">
@@ -18,7 +18,7 @@ const Header = () => {
                 weight="fill"
                 className="text-purple_dark transition duration-300 group-hover:text-purple"
               />
-              <p className="text-purple_dark group-hover:text-purple transition duration-300 font-second">
+              <p className="text-purple_dark group-hover:text-purple transition duration-300 font-roboto">
                 São Paulo, SP
               </p>
             </li>
@@ -30,7 +30,7 @@ const Header = () => {
                 className="text-yellow_dark group-hover:text-yellow transition duration-300"
               />
 
-              <span className="absolute -top-2 -right-2 text-white bg-yellow_dark rounded-full w-5 h-5 flex items-center justify-center font-bold text-xs font-second">
+              <span className="absolute -top-2 -right-2 text-white bg-yellow_dark rounded-full w-5 h-5 flex items-center justify-center font-bold text-xs font-roboto">
                 1
               </span>
             </li>
