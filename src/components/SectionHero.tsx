@@ -1,5 +1,5 @@
-import Hero from '../../public/images/hero.svg';
-import Hero_bg from '../../public/images/hero-bg.svg';
+import Hero from '/images/hero.svg';
+import Hero_bg from '/images/hero-bg.svg';
 import Container from './utilities/Container';
 
 import { ShoppingCart, Package, Timer, Coffee } from '@phosphor-icons/react';

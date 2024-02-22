@@ -1,8 +1,15 @@
-import Logo from '../../public/images/logo.svg';
+import Logo from '/images/logo.svg';
 import { MapPin, ShoppingCart } from '@phosphor-icons/react';
 import Container from './utilities/Container';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleOpenCart = () => {
+    navigate('/cart');
+  };
+
   return (
     <header className="p-8">
       <Container>
@@ -23,7 +30,10 @@ const Header = () => {
               </p>
             </li>
 
-            <li className="bg-yellow_light w-[38px] h-[38px] flex items-center justify-center rounded-md cursor-pointer group relative">
+            <li
+              className="bg-yellow_light w-[38px] h-[38px] flex items-center justify-center rounded-md cursor-pointer group relative"
+              onClick={handleOpenCart}
+            >
               <ShoppingCart
                 size={20}
                 weight="fill"
