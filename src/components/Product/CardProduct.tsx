@@ -1,6 +1,4 @@
-import Cart from '../assets/cart.svg';
-
-import { Minus, Plus } from '@phosphor-icons/react';
+import { Minus, Plus, ShoppingCart } from '@phosphor-icons/react';
 
 import { useDispatch } from 'react-redux';
 import {
@@ -81,7 +79,7 @@ const CardProduct = ({ coffee }: CardProductProps) => {
             </div>
 
             <button className="bg-purple_dark p-2 rounded-md hover:bg-purple transition duration-300">
-              <img src={Cart} alt="Icone de carrinho de compras" />
+              <ShoppingCart size={20} fill="#ffffff" weight="fill" />
             </button>
           </div>
         </div>

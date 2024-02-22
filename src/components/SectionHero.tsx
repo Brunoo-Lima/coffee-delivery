@@ -29,7 +29,7 @@ const SectionHero = () => {
               <ul className="grid grid-cols-2 w-[600px] h-[84px] gap-2">
                 <li className="flex items-center gap-2">
                   <div className="bg-yellow_dark rounded-full w-8 h-8 flex items-center justify-center">
-                    <ShoppingCart color="#ffffff" size={20} />
+                    <ShoppingCart color="#ffffff" size={20} weight="fill" />
                   </div>
                   <p className="font-second text-base">
                     Compra simples e segura
@@ -37,7 +37,7 @@ const SectionHero = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="bg-base_text rounded-full w-8 h-8 flex items-center justify-center">
-                    <Package color="#ffffff" size={20} />
+                    <Package color="#ffffff" size={20} weight="fill" />
                   </div>
                   <p className="font-second text-base">
                     Embalagem mantém o café intacto
@@ -45,7 +45,7 @@ const SectionHero = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="bg-yellow rounded-full w-8 h-8 flex items-center justify-center">
-                    <Timer color="#ffffff" size={20} />
+                    <Timer color="#ffffff" size={20} weight="fill" />
                   </div>
                   <p className="font-second text-base">
                     Entrega rápida e rastreada
@@ -53,7 +53,7 @@ const SectionHero = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="bg-purple rounded-full w-8 h-8 flex items-center justify-center">
-                    <Coffee color="#ffffff" size={20} />
+                    <Coffee color="#ffffff" size={20} weight="fill" />
                   </div>
                   <p className="font-second text-base">
                     O café chega fresquinho até você
