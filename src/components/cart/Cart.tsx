@@ -8,6 +8,7 @@ import {
   Money,
 } from '@phosphor-icons/react';
 import Radio from '../forms/Radio';
+import CartItems from './CartItems';
 
 const Cart = () => {
   return (
@@ -62,9 +63,52 @@ const Cart = () => {
           </div>
 
           <div>
-            <h1>Cafés selecionados</h1>
+            <h1 className="text-subtitle font-bold text-lg font-baloo2 mb-4">
+              Cafés selecionados
+            </h1>
 
-            <div></div>
+            <div className="w-[448px]">
+              <div className="bg-base_card p-10 rounded-se-[4rem] rounded-es-[4rem] rounded-md">
+                <ul className="">
+                  <CartItems />
+                  <CartItems />
+                </ul>
+
+                <div className="mt-8">
+                  <div className="flex flex-col gap-y-2">
+                    <div className="flex justify-between">
+                      <p className="font-roboto font-normal text-sm text-base_text">
+                        Total dos itens
+                      </p>
+                      <p className="font-roboto text-base_text text-base">
+                        R$ 29,70
+                      </p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="font-roboto font-normal text-sm text-base_text">
+                        Entrega
+                      </p>
+                      <p className="font-roboto text-base_text text-base">
+                        R$ 3,50
+                      </p>
+                    </div>
+
+                    <div className="flex justify-between">
+                      <p className="font-roboto text-base_text text-xl font-bold">
+                        Total
+                      </p>
+                      <p className="font-roboto text-base_text text-xl font-bold">
+                        R$ 33,20
+                      </p>
+                    </div>
+
+                    <button className="mt-4 bg-yellow hover:bg-yellow_dark text-white text-sm font-roboto font-bold uppercase h-12 rounded-md transition duration-300">
+                      Confirmar pedido
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

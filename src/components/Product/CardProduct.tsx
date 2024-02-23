@@ -1,10 +1,5 @@
-import { Minus, Plus, ShoppingCart } from '@phosphor-icons/react';
-
-import { useDispatch } from 'react-redux';
-import {
-  decreaseProductQuantity,
-  increaseProductQuantity,
-} from '../../redux/card/actions';
+import { ShoppingCart } from '@phosphor-icons/react';
+import QuantityInput from '../forms/QuantityInput';
 
 interface CardProductProps {
   coffee: {
@@ -19,16 +14,6 @@ interface CardProductProps {
 }
 
 const CardProduct = ({ coffee }: CardProductProps) => {
-  const dispatch = useDispatch();
-
-  const handleIncreaseProductQuantity = () => {
-    dispatch(increaseProductQuantity(coffee.id));
-  };
-
-  const handleDecreaseProductQuantity = () => {
-    dispatch(decreaseProductQuantity(coffee.id));
-  };
-
   return (
     <div className="bg-base_card w-[256px] h-[310px] relative flex p-4 rounded-se-[2.5rem] rounded-es-[2.5rem] rounded-tl-md rounded-br-md">
       <div className="absolute left-[25%] right-[25%] -top-5">
@@ -62,21 +47,7 @@ const CardProduct = ({ coffee }: CardProductProps) => {
           </p>
 
           <div className="flex gap-x-2">
-            <div className="flex justify-between items-center gap-2 bg-base_button w-[4.8rem] px-2 rounded-md">
-              <button onClick={handleDecreaseProductQuantity}>
-                <Minus
-                  size={13}
-                  className="text-purple hover:text-purple_dark transition duration-300"
-                />
-              </button>
-              <p className="text-base">1</p>
-              <button onClick={handleIncreaseProductQuantity}>
-                <Plus
-                  size={13}
-                  className="text-purple hover:text-purple_dark transition duration-300"
-                />
-              </button>
-            </div>
+            <QuantityInput />
 
             <button className="bg-purple_dark p-2 rounded-md hover:bg-purple transition duration-300">
               <ShoppingCart size={20} fill="#ffffff" weight="fill" />
