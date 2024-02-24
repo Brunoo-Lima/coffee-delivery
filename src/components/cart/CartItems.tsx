@@ -1,5 +1,5 @@
 import { Trash } from '@phosphor-icons/react';
-import capuccino from '../../../public/images/coffees/americano.png';
+import capuccino from '/images/coffees/americano.png';
 import QuantityInput from '../forms/QuantityInput';
 
 const CartItems = () => {

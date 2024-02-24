@@ -9,8 +9,14 @@ import {
 } from '@phosphor-icons/react';
 import Radio from '../forms/Radio';
 import CartItems from './CartItems';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+  const navigate = useNavigate();
+
+  const confirmedBuyClick = () => {
+    navigate('/orderFinished');
+  };
   return (
     <section className="py-10">
       <Container>
@@ -102,7 +108,10 @@ const Cart = () => {
                       </p>
                     </div>
 
-                    <button className="mt-4 bg-yellow hover:bg-yellow_dark text-white text-sm font-roboto font-bold uppercase h-12 rounded-md transition duration-300">
+                    <button
+                      className="mt-4 bg-yellow hover:bg-yellow_dark text-white text-sm font-roboto font-bold uppercase h-12 rounded-md transition duration-300"
+                      onClick={confirmedBuyClick}
+                    >
                       Confirmar pedido
                     </button>
                   </div>
