@@ -1,6 +1,6 @@
 import Logo from '/images/logo.svg';
 import { MapPin, ShoppingCart } from '@phosphor-icons/react';
-import Container from './utilities/Container';
+import Container from '../utilities/Container';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {

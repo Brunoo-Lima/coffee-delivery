@@ -6,13 +6,16 @@ const Products = () => {
   return (
     <section className="py-10">
       <Container>
-        <h1 className="text-3xl font-extrabold leading-relaxed mb-10 text-base_subtitle font-baloo2">
-          Nossos cafés
-        </h1>
-        <div className="grid sm:grid-cols-5 grid-cols-1 gap-y-12 justify-items-center">
-          {coffees.map((coffee) => (
-            <CardProduct key={coffee.id} coffee={coffee} />
-          ))}
+        <div className="flex flex-col justify-center">
+          <h1 className="text-3xl md:text-start text-center font-extrabold leading-relaxed mb-10 text-base_subtitle font-baloo2">
+            Nossos cafés
+          </h1>
+
+          <div className="flex flex-wrap lg:justify-start justify-center gap-12">
+            {coffees.map((coffee) => (
+              <CardProduct key={coffee.id} coffee={coffee} />
+            ))}
+          </div>
         </div>
       </Container>
     </section>
