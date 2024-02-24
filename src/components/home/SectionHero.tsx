@@ -62,7 +62,7 @@ const SectionHero = () => {
               </ul>
             </div>
 
-            <div className="max-md:absolute right-0 top-0 max-md:w-28 max-sm:w-16 max-sm:top-8 max-sm:right-14">
+            <div className="max-md:absolute right-0 top-0 max-md:w-28 max-sm:w-16 max-sm:top-8 max-sm:right-12">
               <img src={Hero} alt="Icone de bebida" width={476} height={360} />
             </div>
           </div>

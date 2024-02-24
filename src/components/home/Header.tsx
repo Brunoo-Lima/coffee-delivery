@@ -1,10 +1,14 @@
 import Logo from '/images/logo.svg';
 import { MapPin, ShoppingCart } from '@phosphor-icons/react';
 import Container from '../utilities/Container';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectProductCount } from '../../redux/card/card-selectors';
 
 const Header = () => {
   const navigate = useNavigate();
+
+  const productsCount = useSelector(selectProductCount);
 
   const handleOpenCart = () => {
     navigate('/cart');
@@ -14,9 +18,9 @@ const Header = () => {
     <header className="p-8">
       <Container>
         <div className="flex sm:flex-row flex-col justify-between items-center md:gap-0 gap-4">
-          <div>
+          <Link to="/">
             <img src={Logo} alt="Logo da loja" width={84.95} height={40} />
-          </div>
+          </Link>
 
           <ul className="flex gap-4 items-center">
             <li className="flex items-center justify-evenly bg-purple_light w-[143px] h-[38px] px-1 rounded-md cursor-pointer group">
@@ -40,8 +44,8 @@ const Header = () => {
                 className="text-yellow_dark group-hover:text-yellow transition duration-300"
               />
 
-              <span className="absolute -top-2 -right-2 text-white bg-yellow_dark rounded-full w-5 h-5 flex items-center justify-center font-bold text-xs font-roboto">
-                1
+              <span className="absolute -top-1.5 -right-2 text-white bg-yellow_dark rounded-full size-5 flex items-center justify-center font-bold text-xs font-roboto">
+                {productsCount}
               </span>
             </li>
           </ul>

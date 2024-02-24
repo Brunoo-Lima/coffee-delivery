@@ -20,8 +20,8 @@ const Cart = () => {
   return (
     <section className="py-10">
       <Container>
-        <div className="grid grid-cols-cart">
-          <div className="w-[640px]">
+        <div className="flex flex-wrap justify-center gap-x-10 md:px-0 px-8">
+          <div className="md:w-[640px] w-full">
             <h1 className="text-subtitle font-bold text-lg font-baloo2 mb-4">
               Complete seu pedido
             </h1>
@@ -43,7 +43,7 @@ const Cart = () => {
             </div>
 
             <div className="mt-4">
-              <div className="bg-base_card p-10 rounded-md">
+              <div className="bg-base_card p-10 rounded-md mt-4">
                 <div className="flex gap-2 px-2">
                   <CurrencyDollar size={20} className="text-purple" />
 
@@ -59,7 +59,7 @@ const Cart = () => {
                   </div>
                 </div>
 
-                <ul className="flex gap-4 justify-around">
+                <ul className="flex flex-wrap gap-4 justify-around">
                   <Radio icon={CreditCard} text={'Cartão de Crédito'} />
                   <Radio icon={Bank} text={'Cartão de Débito'} />
                   <Radio icon={Money} text={'Dinheiro'} />
@@ -68,7 +68,7 @@ const Cart = () => {
             </div>
           </div>
 
-          <div>
+          <div className="md:mt-0 mt-12">
             <h1 className="text-subtitle font-bold text-lg font-baloo2 mb-4">
               Cafés selecionados
             </h1>
