@@ -18,11 +18,11 @@ const Address = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-forms gap-2">
-          <div className="w-[200px]">
+        <div className="grid md:grid-cols-forms grid-cols-2 gap-2">
+          <div className="md:w-[200px] col-span-2">
             <Input type="text" placeholder="Bairro" />
           </div>
-          <div className="col-start-2 col-end-3">
+          <div className="md:col-start-2 md:col-end-3">
             <Input type="text" placeholder="Cidade" />
           </div>
           <div className="w-[60px]">

@@ -5,9 +5,9 @@ import QuantityInput from '../forms/QuantityInput';
 const CartItems = () => {
   return (
     <li className="border-b border-b-base_button">
-      <div className="flex justify-between w-[368px] h-20 my-6">
-        <div className="flex gap-4">
-          <div>
+      <div className="flex md:justify-between justify-around md:w-[368px] h-20 my-6">
+        <div className="flex md:gap-4 gap-3">
+          <div className="sm:hidden">
             <img src={capuccino} alt="Icone" width={64} height={64} />
           </div>
 
