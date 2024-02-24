@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className="p-8">
       <Container>
-        <div className="flex justify-between items-center">
+        <div className="flex sm:flex-row flex-col justify-between items-center md:gap-0 gap-4">
           <div>
             <img src={Logo} alt="Logo da loja" width={84.95} height={40} />
           </div>
