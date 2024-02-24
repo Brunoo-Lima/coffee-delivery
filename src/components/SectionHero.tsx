@@ -6,7 +6,7 @@ import { ShoppingCart, Package, Timer, Coffee } from '@phosphor-icons/react';
 
 const SectionHero = () => {
   return (
-    <section className="pb-10">
+    <section className="md:pb-10 pb-20">
       <div
         style={{
           background: `url(${Hero_bg})`,
@@ -15,9 +15,9 @@ const SectionHero = () => {
         className="py-10"
       >
         <Container>
-          <div className="flex justify-between">
-            <div className="flex flex-col w-[588px]">
-              <h1 className="text-base_title font-extrabold text-5xl font-baloo2 w-[650px] leading-tight mb-6">
+          <div className="flex sm:justify-between justify-center relative">
+            <div className="flex flex-col md:w-[588px] w-[400px]">
+              <h1 className="text-base_title font-extrabold md:text-5xl text-3xl font-baloo2 leading-tight mb-6">
                 Encontre o café perfeito para qualquer hora do dia
               </h1>
 
@@ -26,7 +26,7 @@ const SectionHero = () => {
                 qualquer hora
               </p>
 
-              <ul className="grid grid-cols-2 w-[600px] h-[84px] gap-2">
+              <ul className="grid md:grid-cols-2 grid-cols-1 w-[600px] h-[84px] gap-2 md:space-y-0 space-y-2 ">
                 <li className="flex items-center gap-2">
                   <div className="bg-yellow_dark rounded-full w-8 h-8 flex items-center justify-center">
                     <ShoppingCart color="#ffffff" size={20} weight="fill" />
@@ -62,7 +62,7 @@ const SectionHero = () => {
               </ul>
             </div>
 
-            <div>
+            <div className="max-md:absolute right-0 max-md:w-32 max-sm:w-16 max-sm:top-9 max-sm:right-16">
               <img src={Hero} alt="Icone de bebida" width={476} height={360} />
             </div>
           </div>
