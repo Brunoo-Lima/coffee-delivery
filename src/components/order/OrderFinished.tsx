@@ -7,9 +7,9 @@ const OrderFinished = () => {
   return (
     <section className="pt-10">
       <Container>
-        <div className="flex md:justify-between relative">
+        <div className="flex md:justify-between relative md:px-0 px-6">
           <div className="relative">
-            <h1 className="font-extrabold text-3xl text-yellow_dark">
+            <h1 className="font-extrabold md:text-3xl text-2xl text-yellow_dark">
               Uhu! Pedido confirmado
             </h1>
             <p className="font-normal font-roboto text-xl text-base_subtitle my-1">
