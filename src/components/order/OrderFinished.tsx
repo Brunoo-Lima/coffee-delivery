@@ -7,8 +7,8 @@ const OrderFinished = () => {
   return (
     <section className="pt-10">
       <Container>
-        <div className="flex justify-between relative">
-          <div className="">
+        <div className="flex md:justify-between relative">
+          <div className="relative">
             <h1 className="font-extrabold text-3xl text-yellow_dark">
               Uhu! Pedido confirmado
             </h1>
@@ -18,12 +18,12 @@ const OrderFinished = () => {
 
             <div className="mt-8 bg-gradient-to-r from-yellow_dark to-purple rounded-se-[3rem] rounded-es-[3rem] rounded-md p-0.5">
               <div className="p-9 bg-white rounded-se-[2.8rem] rounded-es-[2.8rem] rounded-[4px]">
-                <div className="flex items-center gap-2 ">
+                <div className="flex sm:flex-row items-center gap-2 ">
                   <div className="bg-purple p-2 rounded-full">
                     <MapPin size={20} weight="fill" color="#ffffff" />
                   </div>
 
-                  <p className="w-3/5 font-roboto text-base_text text-base">
+                  <p className="sm:w-3/5 font-roboto text-base_text text-base">
                     Entrega em <strong>Rua João Daniel Martinelli, 102 </strong>
                     Farrapos - Porto Alegre, RS
                   </p>
@@ -50,7 +50,7 @@ const OrderFinished = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-0 -mb-4 right-0">
+          <div className="absolute xl:block hidden bottom-0 -mb-4 right-0">
             <img
               src={Delivery}
               alt="Imagem de entrega"
