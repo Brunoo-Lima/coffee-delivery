@@ -71,7 +71,7 @@ const Cart = () => {
             </div>
           </div>
 
-          <div className="md:mt-0 mt-12 md:w-[448px] w-full">
+          <div className="md:mt-0 mt-12 md:w-[448px] w-[450px]">
             <h1 className="text-subtitle font-bold text-lg font-baloo2 mb-4">
               Cafés selecionados
             </h1>
