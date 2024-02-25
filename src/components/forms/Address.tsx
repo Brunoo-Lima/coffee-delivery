@@ -4,7 +4,7 @@ const Address = () => {
   return (
     <form>
       <div className="grid grid-cols-1">
-        <div className="w-[200px]">
+        <div className="md:w-[200px] w-full">
           <Input type="text" placeholder="CEP" />
         </div>
         <Input type="text" placeholder="Rua" />
@@ -18,15 +18,17 @@ const Address = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-forms grid-cols-2 gap-2">
-          <div className="md:w-[200px] col-span-2">
+        <div className="grid md:grid-cols-forms grid-cols-1 gap-2">
+          <div className="w-full">
             <Input type="text" placeholder="Bairro" />
           </div>
-          <div className="md:col-start-2 md:col-end-3">
-            <Input type="text" placeholder="Cidade" />
-          </div>
-          <div className="w-[60px]">
-            <Input type="text" placeholder="UF" />
+          <div className="grid grid-cols-2 md:gap-x-32 gap-x-4">
+            <div className="md:w-[200px] w-full">
+              <Input type="text" placeholder="Cidade" />
+            </div>
+            <div className="w-[60px]">
+              <Input type="text" placeholder="UF" />
+            </div>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@ const Cart = () => {
               Complete seu pedido
             </h1>
 
-            <div className="bg-base_card p-10 rounded-md">
+            <div className="bg-base_card md:p-10 p-6 rounded-md">
               <div className="flex flex-col">
                 <div className="flex gap-2">
                   <MapPinLine size={20} className="text-yellow_dark" />
@@ -34,7 +34,7 @@ const Cart = () => {
                     Endereço de Entrega
                   </h2>
                 </div>
-                <div className="mb-6 ml-7">
+                <div className="mb-6 md:ml-7 ml-2">
                   <p className="font-roboto text-sm text-base_text font-normal">
                     Informe o endereço onde deseja receber seu pedido
                   </p>
@@ -45,16 +45,16 @@ const Cart = () => {
             </div>
 
             <div className="mt-4">
-              <div className="bg-base_card p-10 rounded-md mt-4">
+              <div className="bg-base_card md:p-10 p-6 rounded-md mt-4">
                 <div className="flex flex-col">
-                  <div className="flex flex-wrap gap-2 px-2">
+                  <div className="flex flex-wrap gap-2 px-2 mb-1">
                     <CurrencyDollar size={20} className="text-purple" />
                     <h2 className="font-roboto font-normal text-base text-base_subtitle">
                       Pagamento
                     </h2>
                   </div>
 
-                  <div className="mb-6 ml-9">
+                  <div className="mb-6 md:ml-9 ml-3">
                     <p className="font-roboto text-sm text-base_text font-normal">
                       O pagamento é feito na entrega. Escolha a forma que deseja
                       pagar
@@ -76,7 +76,7 @@ const Cart = () => {
               Cafés selecionados
             </h1>
 
-            <div className="bg-base_card p-10 rounded-se-[4rem] rounded-es-[4rem] rounded-md">
+            <div className="bg-base_card md:p-10 p-8 rounded-se-[4rem] rounded-es-[4rem] rounded-md">
               <ul className="">
                 <CartItems />
                 <CartItems />

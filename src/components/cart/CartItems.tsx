@@ -16,7 +16,7 @@ const CartItems = () => {
               Expresso Tradicional
             </p>
 
-            <p className="font-roboto font-base font-bold text-base_text">
+            <p className="font-roboto font-base font-bold text-base_text mb-2">
               R$ 19,80
             </p>
           </div>
