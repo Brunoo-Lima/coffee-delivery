@@ -3,7 +3,7 @@ import Input from './Input';
 const Address = () => {
   return (
     <form>
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-1 pr-4">
         <div className="md:w-[200px] w-full">
           <Input type="text" placeholder="CEP" />
         </div>
