@@ -1,5 +1,5 @@
 import SectionHero from './SectionHero';
-import Products from '../Product/Products';
+import Products from '../product/Products';
 import Footer from './Footer';
 
 const Home = () => {

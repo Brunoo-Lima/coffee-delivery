@@ -1,25 +1,37 @@
 import { Trash } from '@phosphor-icons/react';
-import capuccino from '/images/coffees/americano.png';
 import QuantityInput from '../forms/QuantityInput';
 
-const CartItems = () => {
+type CartItemsProps = {
+  product: {
+    id: number;
+    image: string;
+    altImg: string;
+    tags: string[];
+    title: string;
+    description: string;
+    price: number;
+    quantity: number;
+  };
+};
+
+const CartItems = ({ product }: CartItemsProps) => {
   return (
     <li className="border-b border-b-base_button">
       <div className="flex md:justify-between justify-evenly md:gap-4 gap-0 md:w-[368px] my-6">
-        <div className="max-sm:hidden">
-          <img src={capuccino} alt="Icone" width={64} height={64} />
-        </div>
+        <img src={product.image} alt={product.altImg} className="size-16" />
 
-        <div>
-          <div className="flex md:gap-x-16 gap-x-12 flex-wrap">
-            <p className="mb-2 font-roboto font-normal text-base text-base_subtitle">
-              Expresso Tradicional
-            </p>
+        <div className="flex justify-between md:flex-row flex-col flex-wrap">
+          <p className="mb-2 font-roboto font-normal text-base text-base_subtitle">
+            {product.title}
+          </p>
 
-            <p className="font-roboto font-base font-bold text-base_text mb-2">
-              R$ 19,80
-            </p>
-          </div>
+          <p className="font-roboto font-base font-bold text-base_text mb-2">
+            {product.price.toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
+          </p>
+
           <div className="flex gap-2">
             <QuantityInput />
             <button className="bg-base_button px-1 flex items-center gap-1 rounded-md w-[91px] h-8">

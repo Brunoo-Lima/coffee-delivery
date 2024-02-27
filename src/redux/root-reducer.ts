@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import cardReducer, { CardState } from './card/reducer';
+import cartReducer, { CartState } from './cart/reducer';
 
 export type RootState = {
-  cardReducer: CardState;
+  cartReducer: CartState;
 };
 
-const rootReducer = combineReducers({ cardReducer });
+const rootReducer = combineReducers({ cartReducer });
 
 export default rootReducer;

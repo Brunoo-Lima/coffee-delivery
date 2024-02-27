@@ -10,9 +10,14 @@ import {
 import Radio from '../forms/Radio';
 import CartItems from './CartItems';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { CartState } from '../../redux/cart/reducer';
 
 const Cart = () => {
   const navigate = useNavigate();
+  const { products } = useSelector(
+    (state: { cartReducer: CartState }) => state.cartReducer
+  );
 
   const confirmedBuyClick = () => {
     navigate('/orderFinished');
@@ -77,9 +82,10 @@ const Cart = () => {
             </h1>
 
             <div className="bg-base_card md:p-10 p-8 rounded-se-[4rem] rounded-es-[4rem] rounded-md">
-              <ul className="">
-                <CartItems />
-                <CartItems />
+              <ul>
+                {products.map((product) => (
+                  <CartItems key={product.id} product={product} />
+                ))}
               </ul>
 
               <div className="mt-8">

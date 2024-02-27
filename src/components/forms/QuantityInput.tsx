@@ -1,6 +1,10 @@
 import { Minus, Plus } from '@phosphor-icons/react';
+import { useSelector } from 'react-redux';
+import { selectProductsCount } from '../../redux/cart/cart-selectors';
 
 const QuantityInput = () => {
+  const productCount = useSelector(selectProductsCount);
+
   return (
     <div className="flex justify-between items-center gap-2 bg-base_button w-[4.8rem] px-2 rounded-md">
       <button>
@@ -9,7 +13,7 @@ const QuantityInput = () => {
           className="text-purple hover:text-purple_dark transition duration-300"
         />
       </button>
-      <p className="text-base">1</p>
+      <p className="text-base">{productCount}</p>
       <button>
         <Plus
           size={13}

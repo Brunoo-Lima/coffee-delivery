@@ -3,12 +3,12 @@ import { MapPin, ShoppingCart } from '@phosphor-icons/react';
 import Container from '../utilities/Container';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectProductCount } from '../../redux/card/card-selectors';
+import { selectProductsCount } from '../../redux/cart/cart-selectors';
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const productsCount = useSelector(selectProductCount);
+  const productsCount = useSelector(selectProductsCount);
 
   const handleOpenCart = () => {
     navigate('/cart');
