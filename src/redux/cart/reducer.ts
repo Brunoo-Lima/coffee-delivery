@@ -2,9 +2,11 @@ import cartActionTypes from './action-types';
 
 interface CartItem {
   id: number;
-  imgUrl: string;
+  image: string;
   altImg: string;
+  tags: string[];
   title: string;
+  description: string;
   price: number;
   quantity: number;
 }

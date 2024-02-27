@@ -1,5 +1,10 @@
 import { Trash } from '@phosphor-icons/react';
 import QuantityInput from '../forms/QuantityInput';
+import { useDispatch } from 'react-redux';
+import {
+  decreaseProductQuantity,
+  increaseProductQuantity,
+} from '../../redux/cart/actions';
 
 type CartItemsProps = {
   product: {
@@ -15,6 +20,16 @@ type CartItemsProps = {
 };
 
 const CartItems = ({ product }: CartItemsProps) => {
+  const dispatch = useDispatch();
+
+  const handleIncreaseProductQuantity = () => {
+    dispatch(increaseProductQuantity(product.id));
+  };
+
+  const handleDecreaseProductQuantity = () => {
+    dispatch(decreaseProductQuantity(product.id));
+  };
+
   return (
     <li className="border-b border-b-base_button">
       <div className="flex md:justify-between justify-evenly md:gap-4 gap-0 md:w-[368px] my-6">
@@ -33,7 +48,11 @@ const CartItems = ({ product }: CartItemsProps) => {
           </p>
 
           <div className="flex gap-2">
-            <QuantityInput />
+            <QuantityInput
+              handleIncreaseProductQuantity={handleIncreaseProductQuantity}
+              handleDecreaseProductQuantity={handleDecreaseProductQuantity}
+              quantity={product.quantity}
+            />
             <button className="bg-base_button px-1 flex items-center gap-1 rounded-md w-[91px] h-8">
               <Trash size={16} className="text-purple" />
               <p className="font-roboto font-normal text-xs text-base_text uppercase">
