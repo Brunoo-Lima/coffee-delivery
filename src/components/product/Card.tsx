@@ -1,4 +1,3 @@
-import QuantityInput from '../forms/QuantityInput';
 import { useDispatch } from 'react-redux';
 
 import { ShoppingCart } from '@phosphor-icons/react';
@@ -22,14 +21,6 @@ const Card = ({ coffee }: CardProps) => {
   const handleClickAddProductToCart = () => {
     dispatch(addProductToCart(coffee));
   };
-
-  // const handleIncreaseProductQuantity = () => {
-  //   dispatch(increaseProductQuantity(coffee.id));
-  // };
-
-  // const handleDecreaseProductQuantity = () => {
-  //   dispatch(decreaseProductQuantity(coffee.id));
-  // };
 
   return (
     <div className="bg-base_card w-[256px] h-[310px] relative flex p-4 rounded-se-[2.5rem] rounded-es-[2.5rem] rounded-tl-md rounded-br-md">
@@ -66,20 +57,13 @@ const Card = ({ coffee }: CardProps) => {
             })}
           </p>
 
-          <div className="flex gap-x-2">
-            <QuantityInput
-            // handleIncreaseProductQuantity={handleIncreaseProductQuantity}
-            // handleDecreaseProductQuantity={handleDecreaseProductQuantity}
-            // quantity={quantity}
-            />
-
-            <button
-              className="bg-purple_dark p-2 rounded-md hover:bg-purple transition duration-300"
-              onClick={handleClickAddProductToCart}
-            >
-              <ShoppingCart size={20} fill="#ffffff" weight="fill" />
-            </button>
-          </div>
+          <button
+            className="bg-purple_dark p-2 rounded-md hover:bg-purple transition duration-300 w-28 flex justify-evenly items-center"
+            onClick={handleClickAddProductToCart}
+          >
+            <p className="text-white text-sm">Adicionar</p>
+            <ShoppingCart size={20} fill="#ffffff" weight="fill" />
+          </button>
         </div>
       </div>
     </div>

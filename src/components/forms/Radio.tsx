@@ -3,7 +3,7 @@ import { ElementType } from 'react';
 type RadioProps = {
   icon: ElementType;
   text: string;
-  methodsPayments: 'credit' | 'debit' | 'money';
+  methodsPayments: string;
 };
 
 const Radio = ({ icon: Icon, text, methodsPayments }: RadioProps) => {

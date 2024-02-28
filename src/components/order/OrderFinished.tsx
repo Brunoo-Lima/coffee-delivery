@@ -24,8 +24,8 @@ const OrderFinished = () => {
                   </div>
 
                   <p className="sm:w-3/5 font-roboto text-base_text text-base">
-                    Entrega em <strong>Rua João Daniel Martinelli, 102 </strong>
-                    Farrapos - Porto Alegre, RS
+                    Entrega em <strong>Rua Jardim Imperador, 102 </strong>
+                    Farrapos - São Paulo, SP
                   </p>
                 </div>
 

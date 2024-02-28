@@ -1,5 +1,4 @@
 import Container from '../utilities/Container';
-import Address from '../forms/Address';
 import {
   Bank,
   CreditCard,
@@ -15,6 +14,8 @@ import { CartState } from '../../redux/cart/reducer';
 import { selectProductsTotalPrice } from '../../redux/cart/cart-selectors';
 import { formatCurrency, formatCurrency2 } from '../utilities/formatCurrency';
 
+import Address from '../forms/Address';
+
 const shippingFee = 3.5;
 
 const Cart = () => {
@@ -26,7 +27,11 @@ const Cart = () => {
   const productsTotalPrice = useSelector(selectProductsTotalPrice);
 
   const confirmedBuyClick = () => {
-    navigate('/orderFinished');
+    if (products.length === 0) {
+      return alert('Carrinho vazio');
+    } else {
+      navigate('/orderFinished');
+    }
   };
 
   return (
@@ -53,7 +58,7 @@ const Cart = () => {
                 </div>
               </div>
 
-              <Address />
+              <Address order={'order'} />
             </div>
 
             <div className="mt-4">
@@ -102,11 +107,15 @@ const Cart = () => {
 
             <div className="bg-base_card md:p-10 p-8 rounded-se-[4rem] rounded-es-[4rem] rounded-md h-[580px]">
               <div className="overflow-hidden h-[300px]">
-                <ul className="h-full overflow-y-auto">
-                  {products.map((product) => (
-                    <CartItems key={product.id} product={product} />
-                  ))}
-                </ul>
+                {products.length === 0 ? (
+                  <h1 className="text-base_text text-base">Carrinho vazio</h1>
+                ) : (
+                  <ul className="h-full overflow-y-auto">
+                    {products.map((product) => (
+                      <CartItems key={product.id} product={product} />
+                    ))}
+                  </ul>
+                )}
               </div>
 
               <div className="py-5">
@@ -124,7 +133,9 @@ const Cart = () => {
                       Entrega
                     </p>
                     <p className="font-roboto text-base_text text-base">
-                      {formatCurrency(shippingFee)}
+                      {products.length === 0
+                        ? formatCurrency(0)
+                        : formatCurrency(shippingFee)}
                     </p>
                   </div>
 
@@ -133,13 +144,17 @@ const Cart = () => {
                       Total
                     </p>
                     <p className="font-roboto text-base_text text-xl font-bold">
-                      {formatCurrency2(productsTotalPrice, shippingFee)}
+                      {products.length === 0
+                        ? formatCurrency(0)
+                        : formatCurrency2(productsTotalPrice, shippingFee)}
                     </p>
                   </div>
 
                   <button
                     className="mt-4 bg-yellow hover:bg-yellow_dark text-white text-sm font-roboto font-bold uppercase h-12 rounded-md transition duration-300"
                     onClick={confirmedBuyClick}
+                    type="submit"
+                    form="order"
                   >
                     Confirmar pedido
                   </button>

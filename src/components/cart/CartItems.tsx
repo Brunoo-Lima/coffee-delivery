@@ -57,7 +57,7 @@ const CartItems = ({ product }: CartItemsProps) => {
               quantity={product.quantity}
             />
             <button
-              className="bg-base_button px-1 flex justify-center items-center gap-1 rounded-md md:w-[91px] w-12 h-8 hover:bg-base_hover"
+              className="bg-base_button px-1 flex justify-center items-center gap-1 rounded-md md:w-[91px] w-12 h-8 hover:bg-base_hover transition duration-300"
               onClick={handleRemoveProductToCart}
             >
               <Trash size={16} className="text-purple" />
