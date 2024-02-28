@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { ShoppingCart } from '@phosphor-icons/react';
 import { addProductToCart } from '../../redux/cart/actions';
 
-interface CardProductProps {
+interface CardProps {
   coffee: {
     id: number;
     image: string;
@@ -16,7 +16,7 @@ interface CardProductProps {
   };
 }
 
-const CardProduct = ({ coffee }: CardProductProps) => {
+const Card = ({ coffee }: CardProps) => {
   const dispatch = useDispatch();
 
   const handleClickAddProductToCart = () => {
@@ -86,4 +86,4 @@ const CardProduct = ({ coffee }: CardProductProps) => {
   );
 };
 
-export default CardProduct;
+export default Card;

@@ -6,3 +6,11 @@ export const selectProductsCount = (rootReducer: RootState) => {
     0
   );
 };
+
+export const selectProductsTotalPrice = (rootReducer: RootState) => {
+  return rootReducer.cartReducer.products.reduce(
+    (acc: number, curr: { price: number; quantity: number }) =>
+      acc + curr.price * curr.quantity,
+    0
+  );
+};

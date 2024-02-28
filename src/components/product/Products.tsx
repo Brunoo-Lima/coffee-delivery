@@ -1,6 +1,6 @@
 import { coffees } from '../../data/data.json';
 import Container from '../utilities/Container';
-import CardProduct from '../product/CardProduct';
+import Card from './Card';
 
 const Products = () => {
   return (
@@ -13,7 +13,7 @@ const Products = () => {
 
           <div className="flex flex-wrap lg:justify-start justify-center gap-12">
             {coffees.map((coffee) => (
-              <CardProduct key={coffee.id} coffee={coffee} />
+              <Card key={coffee.id} coffee={coffee} />
             ))}
           </div>
         </div>

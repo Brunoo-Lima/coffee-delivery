@@ -12,6 +12,10 @@ import CartItems from './CartItems';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { CartState } from '../../redux/cart/reducer';
+import { selectProductsTotalPrice } from '../../redux/cart/cart-selectors';
+import { formatCurrency, formatCurrency2 } from '../utilities/formatCurrency';
+
+const shippingFee = 3.5;
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -19,9 +23,12 @@ const Cart = () => {
     (state: { cartReducer: CartState }) => state.cartReducer
   );
 
+  const productsTotalPrice = useSelector(selectProductsTotalPrice);
+
   const confirmedBuyClick = () => {
     navigate('/orderFinished');
   };
+
   return (
     <section className="py-10">
       <Container>
@@ -95,7 +102,7 @@ const Cart = () => {
                       Total dos itens
                     </p>
                     <p className="font-roboto text-base_text text-base">
-                      R$ 29,70
+                      {formatCurrency(productsTotalPrice)}
                     </p>
                   </div>
                   <div className="flex justify-between">
@@ -103,7 +110,7 @@ const Cart = () => {
                       Entrega
                     </p>
                     <p className="font-roboto text-base_text text-base">
-                      R$ 3,50
+                      {formatCurrency(shippingFee)}
                     </p>
                   </div>
 
@@ -112,7 +119,7 @@ const Cart = () => {
                       Total
                     </p>
                     <p className="font-roboto text-base_text text-xl font-bold">
-                      R$ 33,20
+                      {formatCurrency2(productsTotalPrice, shippingFee)}
                     </p>
                   </div>
 
