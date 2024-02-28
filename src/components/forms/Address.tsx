@@ -2,6 +2,7 @@ import Input from './Input';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { forwardRef } from 'react';
 
 //TO-DO: resolver bug do zod
 
@@ -21,11 +22,11 @@ type AddressProps = {
   order: string;
 };
 
-const Address = ({ order }: AddressProps) => {
+const Address = forwardRef<HTMLFormElement, AddressProps>(({ order }, ref) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<CreateAddressUserFormData>({
     resolver: zodResolver(createAddressUserSchema),
   });
@@ -35,7 +36,7 @@ const Address = ({ order }: AddressProps) => {
   };
 
   return (
-    <form id={order} onSubmit={handleSubmit(createAddress)}>
+    <form id={order} onSubmit={handleSubmit(createAddress)} ref={ref}>
       <div className="grid grid-cols-1 pr-4">
         <div className="md:w-[200px] w-full">
           <Input
@@ -96,6 +97,6 @@ const Address = ({ order }: AddressProps) => {
       </div>
     </form>
   );
-};
+});
 
 export default Address;
