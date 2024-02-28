@@ -75,9 +75,21 @@ const Cart = () => {
                 </div>
 
                 <ul className="flex flex-wrap gap-4 justify-around">
-                  <Radio icon={CreditCard} text={'Cartão de Crédito'} />
-                  <Radio icon={Bank} text={'Cartão de Débito'} />
-                  <Radio icon={Money} text={'Dinheiro'} />
+                  <Radio
+                    methodsPayments={'credit'}
+                    icon={CreditCard}
+                    text={'Cartão de Crédito'}
+                  />
+                  <Radio
+                    methodsPayments={'debit'}
+                    icon={Bank}
+                    text={'Cartão de Débito'}
+                  />
+                  <Radio
+                    methodsPayments={'money'}
+                    icon={Money}
+                    text={'Dinheiro'}
+                  />
                 </ul>
               </div>
             </div>

@@ -6,6 +6,7 @@ import {
   increaseProductQuantity,
   removeProduct,
 } from '../../redux/cart/actions';
+import { formatCurrency } from '../utilities/formatCurrency';
 
 type CartItemsProps = {
   product: {
@@ -46,10 +47,7 @@ const CartItems = ({ product }: CartItemsProps) => {
           </p>
 
           <p className="font-roboto font-base font-bold text-base_text mb-2">
-            {product.price.toLocaleString('pt-BR', {
-              style: 'currency',
-              currency: 'BRL',
-            })}
+            {formatCurrency(product.price)}
           </p>
 
           <div className="flex gap-2">
@@ -59,11 +57,11 @@ const CartItems = ({ product }: CartItemsProps) => {
               quantity={product.quantity}
             />
             <button
-              className="bg-base_button px-1 flex items-center gap-1 rounded-md w-[91px] h-8"
+              className="bg-base_button px-1 flex justify-center items-center gap-1 rounded-md md:w-[91px] w-12 h-8 hover:bg-base_hover"
               onClick={handleRemoveProductToCart}
             >
               <Trash size={16} className="text-purple" />
-              <p className="font-roboto font-normal text-xs text-base_text uppercase">
+              <p className="md:block hidden font-roboto font-normal text-xs text-base_text uppercase">
                 Remover
               </p>
             </button>

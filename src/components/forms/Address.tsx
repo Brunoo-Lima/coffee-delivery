@@ -22,7 +22,7 @@ const Address = () => {
           <div className="w-full">
             <Input type="text" placeholder="Bairro" />
           </div>
-          <div className="grid grid-cols-2 md:gap-x-32 gap-x-4">
+          <div className="grid grid-cols-2 md:gap-x-36 gap-x-2">
             <div className="md:w-[200px] w-full">
               <Input type="text" placeholder="Cidade" />
             </div>
