@@ -1,6 +1,6 @@
 import { coffees } from '../../data/data.json';
 import Container from '../utilities/Container';
-import CardProduct from './CardProduct';
+import CardProduct from '../product/CardProduct';
 
 const Products = () => {
   return (
