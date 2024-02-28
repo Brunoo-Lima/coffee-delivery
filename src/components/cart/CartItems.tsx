@@ -37,10 +37,10 @@ const CartItems = ({ product }: CartItemsProps) => {
 
   return (
     <li className="border-b border-b-base_button">
-      <div className="flex md:justify-between justify-evenly md:gap-4 gap-0 md:w-[368px] my-6">
+      <div className="flex md:justify-between justify-center gap-4 md:w-[348px] my-6 px-5">
         <img src={product.image} alt={product.altImg} className="size-16" />
 
-        <div className="flex justify-between md:flex-row flex-col flex-wrap">
+        <div className="flex md:flex-row md:justify-between flex-col flex-wrap">
           <p className="mb-2 font-roboto font-normal text-base text-base_subtitle">
             {product.title}
           </p>

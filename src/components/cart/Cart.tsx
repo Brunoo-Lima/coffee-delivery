@@ -88,14 +88,16 @@ const Cart = () => {
               Cafés selecionados
             </h1>
 
-            <div className="bg-base_card md:p-10 p-8 rounded-se-[4rem] rounded-es-[4rem] rounded-md">
-              <ul>
-                {products.map((product) => (
-                  <CartItems key={product.id} product={product} />
-                ))}
-              </ul>
+            <div className="bg-base_card md:p-10 p-8 rounded-se-[4rem] rounded-es-[4rem] rounded-md h-[580px]">
+              <div className="overflow-hidden h-[300px]">
+                <ul className="h-full overflow-y-auto">
+                  {products.map((product) => (
+                    <CartItems key={product.id} product={product} />
+                  ))}
+                </ul>
+              </div>
 
-              <div className="mt-8">
+              <div className="py-5">
                 <div className="flex flex-col gap-y-2">
                   <div className="flex justify-between">
                     <p className="font-roboto font-normal text-sm text-base_text">
