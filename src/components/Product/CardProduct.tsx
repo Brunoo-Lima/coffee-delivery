@@ -23,6 +23,14 @@ const CardProduct = ({ coffee }: CardProductProps) => {
     dispatch(addProductToCart(coffee));
   };
 
+  // const handleIncreaseProductQuantity = () => {
+  //   dispatch(increaseProductQuantity(coffee.id));
+  // };
+
+  // const handleDecreaseProductQuantity = () => {
+  //   dispatch(decreaseProductQuantity(coffee.id));
+  // };
+
   return (
     <div className="bg-base_card w-[256px] h-[310px] relative flex p-4 rounded-se-[2.5rem] rounded-es-[2.5rem] rounded-tl-md rounded-br-md">
       <div className="absolute left-[25%] right-[25%] -top-5">
@@ -59,7 +67,11 @@ const CardProduct = ({ coffee }: CardProductProps) => {
           </p>
 
           <div className="flex gap-x-2">
-            <QuantityInput />
+            <QuantityInput
+            // handleIncreaseProductQuantity={handleIncreaseProductQuantity}
+            // handleDecreaseProductQuantity={handleDecreaseProductQuantity}
+            // quantity={quantity}
+            />
 
             <button
               className="bg-purple_dark p-2 rounded-md hover:bg-purple transition duration-300"
