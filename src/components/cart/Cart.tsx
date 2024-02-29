@@ -1,12 +1,5 @@
 import Container from '../utilities/Container';
-import {
-  Bank,
-  CreditCard,
-  CurrencyDollar,
-  MapPinLine,
-  Money,
-} from '@phosphor-icons/react';
-import Radio from '../forms/Radio';
+import { MapPinLine } from '@phosphor-icons/react';
 import CartItems from './CartItems';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -57,47 +50,10 @@ const Cart = () => {
                   </p>
                 </div>
               </div>
-
-              <Address order={'order'} />
+              <Address order={`order`} />
             </div>
 
-            <div className="mt-4">
-              <div className="bg-base_card md:p-10 p-6 rounded-md mt-4">
-                <div className="flex flex-col">
-                  <div className="flex flex-wrap gap-2 px-2 mb-1">
-                    <CurrencyDollar size={20} className="text-purple" />
-                    <h2 className="font-roboto font-normal text-base text-base_subtitle">
-                      Pagamento
-                    </h2>
-                  </div>
-
-                  <div className="mb-6 md:ml-9 ml-3">
-                    <p className="font-roboto text-sm text-base_text font-normal">
-                      O pagamento é feito na entrega. Escolha a forma que deseja
-                      pagar
-                    </p>
-                  </div>
-                </div>
-
-                <ul className="flex flex-wrap gap-4 justify-around">
-                  <Radio
-                    methodsPayments={'credit'}
-                    icon={CreditCard}
-                    text={'Cartão de Crédito'}
-                  />
-                  <Radio
-                    methodsPayments={'debit'}
-                    icon={Bank}
-                    text={'Cartão de Débito'}
-                  />
-                  <Radio
-                    methodsPayments={'money'}
-                    icon={Money}
-                    text={'Dinheiro'}
-                  />
-                </ul>
-              </div>
-            </div>
+            {/* <MethodPayment /> */}
           </div>
 
           <div className="md:mt-0 mt-12 md:w-[448px] w-[450px]">

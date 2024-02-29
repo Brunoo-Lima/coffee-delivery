@@ -1,9 +1,15 @@
+import { useSelector } from 'react-redux';
 import Container from '../utilities/Container';
 import Delivery from '/images/delivery.svg';
 
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react';
+import { FormsState } from '../../redux/forms/reducer';
 
 const OrderFinished = () => {
+  const formData = useSelector(
+    (state: { formReducer: FormsState }) => state.formReducer.formData
+  );
+
   return (
     <section className="pt-10">
       <Container>
@@ -24,8 +30,11 @@ const OrderFinished = () => {
                   </div>
 
                   <p className="sm:w-3/5 font-roboto text-base_text text-base">
-                    Entrega em <strong>Rua Jardim Imperador, 102 </strong>
-                    Farrapos - São Paulo, SP
+                    Entrega em{' '}
+                    <strong>
+                      {formData.street} - {formData.number},{' '}
+                    </strong>
+                    {formData.neighborhood} - {formData.city} - {formData.state}
                   </p>
                 </div>
 
@@ -43,7 +52,8 @@ const OrderFinished = () => {
                     <CurrencyDollar size={20} color="#ffffff" />
                   </div>
                   <p className="w-44 font-roboto text-base_text text-base">
-                    Pagamento na entrega <strong>Cartão de Crédito</strong>
+                    Pagamento na entrega{' '}
+                    <strong>{formData.paymentMethod}</strong>
                   </p>
                 </div>
               </div>

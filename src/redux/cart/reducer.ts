@@ -71,6 +71,7 @@ const cartReducer = (state = initialState, action: Action) => {
           )
           .filter((product) => product.quantity > 0),
       };
+
     default:
       return state;
   }
