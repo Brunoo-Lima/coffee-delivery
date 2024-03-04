@@ -1,5 +1,5 @@
 import Container from '../utilities/Container';
-import { MapPinLine } from '@phosphor-icons/react';
+import { CurrencyDollar, MapPinLine } from '@phosphor-icons/react';
 import CartItems from './CartItems';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -7,12 +7,16 @@ import { CartState } from '../../redux/cart/reducer';
 import { selectProductsTotalPrice } from '../../redux/cart/cart-selectors';
 import { formatCurrency, formatCurrency2 } from '../utilities/formatCurrency';
 
-import Address from '../forms/Address';
+import FormInputs from '../forms/FormInputs';
+import Radio from '../forms/Radio';
+import { useDispatch } from 'react-redux';
+import { clearCart } from '../../redux/cart/actions';
 
 const shippingFee = 3.5;
 
 const Cart = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { products } = useSelector(
     (state: { cartReducer: CartState }) => state.cartReducer
   );
@@ -24,6 +28,7 @@ const Cart = () => {
       return alert('Carrinho vazio');
     } else {
       navigate('/orderFinished');
+      dispatch(clearCart());
     }
   };
 
@@ -50,10 +55,50 @@ const Cart = () => {
                   </p>
                 </div>
               </div>
-              <Address order={`order`} />
+              <FormInputs />
             </div>
 
             {/* <MethodPayment /> */}
+            <div className="py-4">
+              <div className="bg-base_card md:p-10 p-6 rounded-md mt-4">
+                <div className="flex flex-col">
+                  <div className="flex flex-wrap gap-2 px-2 mb-1">
+                    <CurrencyDollar size={20} className="text-purple" />
+                    <h2 className="font-roboto font-normal text-base text-base_subtitle">
+                      Pagamento
+                    </h2>
+                  </div>
+
+                  <div className="mb-6 md:ml-9 ml-3">
+                    <p className="font-roboto text-sm text-base_text font-normal">
+                      O pagamento é feito na entrega. Escolha a forma que deseja
+                      pagar
+                    </p>
+                  </div>
+                </div>
+
+                {/* <ul className="flex flex-wrap gap-4 justify-around">
+                  <Radio
+                    isSelected={selectPaymentMethod === 'credit'}
+                    icon={CreditCard}
+                    {...register('paymentMethod')}
+                    text={'Cartão de Crédito'}
+                  />
+                  <Radio
+                    isSelected={selectPaymentMethod === 'debit'}
+                    icon={Bank}
+                    {...register('paymentMethod')}
+                    text={'Cartão de Débito'}
+                  />
+                  <Radio
+                    isSelected={selectPaymentMethod === 'cash'}
+                    icon={Money}
+                    {...register('paymentMethod')}
+                    text={'Dinheiro'}
+                  />
+                </ul> */}
+              </div>
+            </div>
           </div>
 
           <div className="md:mt-0 mt-12 md:w-[448px] w-[450px]">
@@ -110,7 +155,6 @@ const Cart = () => {
                     className="mt-4 bg-yellow hover:bg-yellow_dark text-white text-sm font-roboto font-bold uppercase h-12 rounded-md transition duration-300"
                     onClick={confirmedBuyClick}
                     type="submit"
-                    form="order"
                   >
                     Confirmar pedido
                   </button>
