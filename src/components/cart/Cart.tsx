@@ -1,5 +1,11 @@
 import Container from '../utilities/Container';
-import { CurrencyDollar, MapPinLine } from '@phosphor-icons/react';
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from '@phosphor-icons/react';
 import CartItems from './CartItems';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -8,9 +14,10 @@ import { selectProductsTotalPrice } from '../../redux/cart/cart-selectors';
 import { formatCurrency, formatCurrency2 } from '../utilities/formatCurrency';
 
 import FormInputs from '../forms/FormInputs';
-import Radio from '../forms/Radio';
 import { useDispatch } from 'react-redux';
 import { clearCart } from '../../redux/cart/actions';
+// import PaymentSelector from '../forms/PaymentSelector';
+import Radio from '../forms/Radio';
 
 const shippingFee = 3.5;
 
@@ -58,7 +65,6 @@ const Cart = () => {
               <FormInputs />
             </div>
 
-            {/* <MethodPayment /> */}
             <div className="py-4">
               <div className="bg-base_card md:p-10 p-6 rounded-md mt-4">
                 <div className="flex flex-col">
@@ -77,26 +83,21 @@ const Cart = () => {
                   </div>
                 </div>
 
-                {/* <ul className="flex flex-wrap gap-4 justify-around">
+                {/* <PaymentSelector /> */}
+
+                <ul className="flex flex-wrap gap-4 justify-around">
                   <Radio
-                    isSelected={selectPaymentMethod === 'credit'}
+                    isSelected={'credit'}
                     icon={CreditCard}
-                    {...register('paymentMethod')}
                     text={'Cartão de Crédito'}
                   />
                   <Radio
-                    isSelected={selectPaymentMethod === 'debit'}
+                    isSelected={'debit'}
                     icon={Bank}
-                    {...register('paymentMethod')}
                     text={'Cartão de Débito'}
                   />
-                  <Radio
-                    isSelected={selectPaymentMethod === 'cash'}
-                    icon={Money}
-                    {...register('paymentMethod')}
-                    text={'Dinheiro'}
-                  />
-                </ul> */}
+                  <Radio isSelected={'cash'} icon={Money} text={'Dinheiro'} />
+                </ul>
               </div>
             </div>
           </div>
