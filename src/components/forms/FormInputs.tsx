@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { saveFormData } from '../../redux/forms/actions';
 import Radio from './Radio';
 import { forwardRef } from 'react';
+import { toast } from 'react-toastify';
 
 const createAddressUserSchema = z.object({
   zipCode: z.coerce
@@ -73,6 +74,7 @@ const FormInputs = forwardRef<HTMLFormElement>((_props, ref) => {
 
   const createAddress = (data: CreateAddressUserFormData) => {
     dispatch(saveFormData(data));
+    toast.success('Dados salvos!');
   };
 
   return (
@@ -80,9 +82,8 @@ const FormInputs = forwardRef<HTMLFormElement>((_props, ref) => {
       <div className="grid grid-cols-1 pr-4">
         <div className="md:w-[200px] w-full">
           <Input
-            type="text"
             placeholder="CEP"
-            {...register('zipCode', { valueAsNumber: true })}
+            {...register('zipCode', { valueAsNumber: true, required: true })}
           />
           {errors.zipCode && (
             <span className="text-base_text text-sm font-semibold ml-2">
@@ -92,7 +93,7 @@ const FormInputs = forwardRef<HTMLFormElement>((_props, ref) => {
         </div>
 
         <div className="w-full">
-          <Input type="text" placeholder="Rua" {...register('street')} />
+          <Input placeholder="Rua" {...register('street')} />
           {errors.street && (
             <span className="text-base_text text-sm font-semibold ml-2">
               {errors.street.message}
@@ -102,7 +103,10 @@ const FormInputs = forwardRef<HTMLFormElement>((_props, ref) => {
 
         <div className="grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-x-2">
           <div className="md:w-[200px]">
-            <Input type="text" placeholder="Número" {...register('number')} />
+            <Input
+              placeholder="Número"
+              {...register('number', { required: true })}
+            />
             {errors.number && (
               <span className="text-base_text text-sm font-semibold ml-2">
                 {errors.number.message}
@@ -111,7 +115,6 @@ const FormInputs = forwardRef<HTMLFormElement>((_props, ref) => {
           </div>
           <div className="md:col-span-2">
             <Input
-              type="text"
               placeholder="Complemento (Opcional)"
               {...register('complement')}
             />
@@ -125,11 +128,7 @@ const FormInputs = forwardRef<HTMLFormElement>((_props, ref) => {
 
         <div className="grid md:grid-cols-forms grid-cols-1 gap-2">
           <div className="w-full">
-            <Input
-              type="text"
-              placeholder="Bairro"
-              {...register('neighborhood')}
-            />
+            <Input placeholder="Bairro" {...register('neighborhood')} />
             {errors.neighborhood && (
               <span className="text-base_text text-sm font-semibold ml-2">
                 {errors.neighborhood.message}
@@ -138,7 +137,7 @@ const FormInputs = forwardRef<HTMLFormElement>((_props, ref) => {
           </div>
           <div className="grid grid-cols-2 md:gap-x-36 gap-x-2">
             <div className="md:w-[200px] w-full">
-              <Input type="text" placeholder="Cidade" {...register('city')} />
+              <Input placeholder="Cidade" {...register('city')} />
               {errors.city && (
                 <span className="text-base_text text-sm font-semibold ml-2">
                   {errors.city.message}
@@ -147,7 +146,7 @@ const FormInputs = forwardRef<HTMLFormElement>((_props, ref) => {
             </div>
             <div className="w-[100px]">
               <div className="w-[60px]">
-                <Input type="text" placeholder="UF" {...register('state')} />
+                <Input placeholder="UF" {...register('state')} />
               </div>
               {errors.state && (
                 <span className="text-base_text text-sm font-semibold ml-2">

@@ -7,6 +7,7 @@ import {
   removeProduct,
 } from '../../redux/cart/actions';
 import { formatCurrency } from '../utilities/formatCurrency';
+import { toast } from 'react-toastify';
 
 type CartItemsProps = {
   product: {
@@ -34,6 +35,7 @@ const CartItems = ({ product }: CartItemsProps) => {
 
   const handleRemoveProductToCart = () => {
     dispatch(removeProduct(product.id));
+    toast.success('Excluido com Sucesso!');
   };
 
   return (

@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 
 import { ShoppingCart } from '@phosphor-icons/react';
 import { addProductToCart } from '../../redux/cart/actions';
+import { toast } from 'react-toastify';
 
 interface CardProps {
   coffee: {
@@ -20,6 +21,7 @@ const Card = ({ coffee }: CardProps) => {
 
   const handleClickAddProductToCart = () => {
     dispatch(addProductToCart(coffee));
+    toast.success('Adicionado no carrinho!');
   };
 
   return (

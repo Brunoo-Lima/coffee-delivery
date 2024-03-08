@@ -2,14 +2,13 @@ import { forwardRef } from 'react';
 
 type InputProps = {
   placeholder: string;
-  type: string;
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ placeholder, type, ...rest }, ref) => {
+  ({ placeholder, ...rest }, ref) => {
     return (
       <input
-        type={type}
+        type="text"
         placeholder={placeholder}
         {...rest}
         ref={ref}

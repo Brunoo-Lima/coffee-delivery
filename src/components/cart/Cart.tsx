@@ -10,7 +10,7 @@ import { formatCurrency, formatCurrency2 } from '../utilities/formatCurrency';
 import FormInputs from '../forms/FormInputs';
 import { useDispatch } from 'react-redux';
 import { clearCart } from '../../redux/cart/actions';
-// import PaymentSelector from '../forms/PaymentSelector';
+import { toast } from 'react-toastify';
 
 const shippingFee = 3.5;
 
@@ -25,9 +25,10 @@ const Cart = () => {
 
   const confirmedBuyClick = () => {
     if (products.length === 0) {
-      return alert('Carrinho vazio');
+      toast.warn('Carrinho vazio!');
     } else {
       navigate('/orderFinished');
+      toast.success('Pedido confirmado!');
       dispatch(clearCart());
     }
   };
