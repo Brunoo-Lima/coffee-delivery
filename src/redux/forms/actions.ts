@@ -8,6 +8,7 @@ interface FormData {
   neighborhood: string;
   city: string;
   state: string;
+  paymentMethod: 'Crédito' | 'Débito' | 'Dinheiro';
 }
 
 export const saveFormData = (payload: FormData) => ({

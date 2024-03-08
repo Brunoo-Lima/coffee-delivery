@@ -1,11 +1,5 @@
 import Container from '../utilities/Container';
-import {
-  Bank,
-  CreditCard,
-  CurrencyDollar,
-  MapPinLine,
-  Money,
-} from '@phosphor-icons/react';
+import { MapPinLine } from '@phosphor-icons/react';
 import CartItems from './CartItems';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -17,7 +11,6 @@ import FormInputs from '../forms/FormInputs';
 import { useDispatch } from 'react-redux';
 import { clearCart } from '../../redux/cart/actions';
 // import PaymentSelector from '../forms/PaymentSelector';
-import Radio from '../forms/Radio';
 
 const shippingFee = 3.5;
 
@@ -63,42 +56,6 @@ const Cart = () => {
                 </div>
               </div>
               <FormInputs />
-            </div>
-
-            <div className="py-4">
-              <div className="bg-base_card md:p-10 p-6 rounded-md mt-4">
-                <div className="flex flex-col">
-                  <div className="flex flex-wrap gap-2 px-2 mb-1">
-                    <CurrencyDollar size={20} className="text-purple" />
-                    <h2 className="font-roboto font-normal text-base text-base_subtitle">
-                      Pagamento
-                    </h2>
-                  </div>
-
-                  <div className="mb-6 md:ml-9 ml-3">
-                    <p className="font-roboto text-sm text-base_text font-normal">
-                      O pagamento é feito na entrega. Escolha a forma que deseja
-                      pagar
-                    </p>
-                  </div>
-                </div>
-
-                {/* <PaymentSelector /> */}
-
-                <ul className="flex flex-wrap gap-4 justify-around">
-                  <Radio
-                    isSelected={'credit'}
-                    icon={CreditCard}
-                    text={'Cartão de Crédito'}
-                  />
-                  <Radio
-                    isSelected={'debit'}
-                    icon={Bank}
-                    text={'Cartão de Débito'}
-                  />
-                  <Radio isSelected={'cash'} icon={Money} text={'Dinheiro'} />
-                </ul>
-              </div>
             </div>
           </div>
 

@@ -1,3 +1,3 @@
 export const formActionTypes = {
-  SAVE_FORMS: 'cart/saveForms',
+  SAVE_FORMS: 'form/saveForms',
 };

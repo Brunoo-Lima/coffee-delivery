@@ -1,9 +1,13 @@
 import Input from './Input';
+import { Bank, CreditCard, CurrencyDollar, Money } from '@phosphor-icons/react';
+
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useDispatch } from 'react-redux';
 import { saveFormData } from '../../redux/forms/actions';
+import Radio from './Radio';
+import { forwardRef } from 'react';
 
 const createAddressUserSchema = z.object({
   zipCode: z.coerce
@@ -52,11 +56,12 @@ const createAddressUserSchema = z.object({
     .string()
     .min(1, 'Informe a UF')
     .transform((state) => state.toLocaleUpperCase()),
+  paymentMethod: z.enum(['Crédito', 'Débito', 'Dinheiro']),
 });
 
 type CreateAddressUserFormData = z.infer<typeof createAddressUserSchema>;
 
-const FormInputs = () => {
+const FormInputs = forwardRef<HTMLFormElement>((props, ref) => {
   const {
     register,
     handleSubmit,
@@ -71,7 +76,7 @@ const FormInputs = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(createAddress)}>
+    <form onSubmit={handleSubmit(createAddress)} ref={ref}>
       <div className="grid grid-cols-1 pr-4">
         <div className="md:w-[200px] w-full">
           <Input
@@ -154,6 +159,49 @@ const FormInputs = () => {
         </div>
       </div>
 
+      <div className="py-4">
+        <div className="bg-base_card rounded-md p-1 mt-4">
+          <div className="flex flex-col">
+            <div className="flex flex-wrap gap-2 px-1 mb-1">
+              <CurrencyDollar size={20} className="text-purple" />
+              <h2 className="font-roboto font-normal text-base text-base_subtitle">
+                Pagamento
+              </h2>
+            </div>
+
+            <div className="mb-6 md:ml-9 ml-3">
+              <p className="font-roboto text-sm text-base_text font-normal">
+                O pagamento é feito na entrega. Escolha a forma que deseja pagar
+              </p>
+            </div>
+          </div>
+
+          <ul className="flex flex-wrap gap-2 justify-around">
+            <Radio
+              value={'Crédito'}
+              icon={CreditCard}
+              id={'field-credit'}
+              text={'Cartão de Crédito'}
+              {...register('paymentMethod')}
+            />
+            <Radio
+              value={'Débito'}
+              icon={Bank}
+              id={'field-debit'}
+              text={'Cartão de Débito'}
+              {...register('paymentMethod')}
+            />
+            <Radio
+              value={'Dinheiro'}
+              icon={Money}
+              id={'field-cash'}
+              text={'Dinheiro'}
+              {...register('paymentMethod')}
+            />
+          </ul>
+        </div>
+      </div>
+
       <button
         className="bg-yellow p-2 ml-2 mt-4 w-28 rounded-md hover:bg-yellow_dark transition duration-300"
         type="submit"
@@ -164,6 +212,6 @@ const FormInputs = () => {
       </button>
     </form>
   );
-};
+});
 
 export default FormInputs;

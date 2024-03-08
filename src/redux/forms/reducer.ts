@@ -8,7 +8,7 @@ interface FormData {
   neighborhood: string;
   city: string;
   state: string;
-  paymentMethod: string[];
+  paymentMethod: 'Crédito' | 'Débito' | 'Dinheiro';
 }
 
 export type FormsState = { formData: FormData };
@@ -22,7 +22,7 @@ const initialState: FormsState = {
     neighborhood: '',
     city: '',
     state: '',
-    paymentMethod: [],
+    paymentMethod: 'Crédito',
   },
 };
 
