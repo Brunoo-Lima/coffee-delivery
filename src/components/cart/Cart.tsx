@@ -1,5 +1,4 @@
 import Container from '../utilities/Container';
-import { MapPinLine } from '@phosphor-icons/react';
 import CartItems from './CartItems';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -7,18 +6,14 @@ import { CartState } from '../../redux/cart/reducer';
 import { selectProductsTotalPrice } from '../../redux/cart/cart-selectors';
 import { formatCurrency, formatCurrency2 } from '../utilities/formatCurrency';
 
-import FormInputs from '../forms/FormInputs';
-import { useDispatch } from 'react-redux';
-import { clearCart } from '../../redux/cart/actions';
 import { toast } from 'react-toastify';
 
 const shippingFee = 3.5;
 
 const Cart = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const { products } = useSelector(
-    (state: { cartReducer: CartState }) => state.cartReducer
+    (state: { cartReducer: CartState }) => state.cartReducer,
   );
 
   const productsTotalPrice = useSelector(selectProductsTotalPrice);
@@ -27,39 +22,14 @@ const Cart = () => {
     if (products.length === 0) {
       toast.warn('Carrinho vazio!');
     } else {
-      navigate('/orderFinished');
-      toast.success('Pedido confirmado!');
-      dispatch(clearCart());
+      navigate('/orderForm');
     }
   };
 
   return (
     <section className="py-10">
       <Container>
-        <div className="flex flex-wrap justify-center md:gap-x-10 gap-x-0 md:px-0 px-6">
-          <div className="md:w-[640px] w-full">
-            <h1 className="text-subtitle font-bold text-lg font-baloo2 mb-4">
-              Complete seu pedido
-            </h1>
-
-            <div className="bg-base_card md:p-10 p-6 rounded-md">
-              <div className="flex flex-col">
-                <div className="flex gap-2">
-                  <MapPinLine size={20} className="text-yellow_dark" />
-                  <h2 className="font-roboto font-normal text-base text-base_text">
-                    Endereço de Entrega
-                  </h2>
-                </div>
-                <div className="mb-6 md:ml-7 ml-2">
-                  <p className="font-roboto text-sm text-base_text font-normal">
-                    Informe o endereço onde deseja receber seu pedido
-                  </p>
-                </div>
-              </div>
-              <FormInputs />
-            </div>
-          </div>
-
+        <div className="flex justify-center md:gap-x-10 gap-x-0 md:px-0 px-6">
           <div className="md:mt-0 mt-12 md:w-[448px] w-[450px]">
             <h1 className="text-subtitle font-bold text-lg font-baloo2 mb-4">
               Cafés selecionados
@@ -115,7 +85,7 @@ const Cart = () => {
                     onClick={confirmedBuyClick}
                     type="submit"
                   >
-                    Confirmar pedido
+                    Preencher dados
                   </button>
                 </div>
               </div>

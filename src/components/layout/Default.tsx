@@ -8,7 +8,7 @@ const Default = () => {
   return (
     <>
       <Header />
-      <ToastContainer />
+      <ToastContainer position="bottom-right" />
       <Outlet />
     </>
   );
