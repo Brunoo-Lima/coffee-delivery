@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# Coffee Delivery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Coffee Delivery consiste em uma página web e catálogo de cafés.
 
-Currently, two official plugins are available:
+O projeto foi desenvolvido utilizando Redux para gerenciamento de estado, permitindo a passagem de dados para os componentes de forma mais organizada, concisa e direta.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Além disso, utilizei o react-hook-form para o gerenciamento do formulário, proporcionando maior desempenho sem a necessidade de estados locais e evitando a necessidade de re-renderização a cada mudança nos inputs.
 
-## Expanding the ESLint configuration
+Outra biblioteca que integrei ao projeto foi o Zod, que é utilizado para validação e tipagem de dados nos inputs de forma rápida e em tempo de execução.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tecnologias Utilizadas
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- React
+- TypeScript
+- Tailwind CSS
+- Redux
+- Zod
+- React Hook Form
+- React-router-dom

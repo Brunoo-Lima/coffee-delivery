@@ -16,9 +16,9 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
           className="hidden peer"
           value={value}
           id={id}
-          {...rest}
           ref={ref}
           required
+          {...rest}
         />
         <label
           htmlFor={id}
